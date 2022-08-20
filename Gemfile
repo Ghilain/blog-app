@@ -71,7 +71,11 @@ group :test do
   gem 'webdrivers'
 end
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'ffi', '~> 1.9', '>= 1.9.10'
 group :development, :test do
+  gem 'debug', platforms: %i[mri mingw x64_mingw] # rubocop:todo Bundler/DuplicatedGem
+  gem 'factory_bot_rails'
+  gem 'faker'
   gem 'rspec-rails'
 end
-gem 'ffi', '~> 1.9', '>= 1.9.10'
