@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'rails_helper' # rubocop:todo Layout/EndOfLine
 
 RSpec.describe User, type: :model do
   subject { User.new(name: 'Ghilain', photo: 'https://unsplash.com/photos/XPTwNe15dtw', bio: 'web developer') }
@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'posts counter should be an integer minimum is zero' do
-    subject.posts_counter < -1
+    subject.posts_counter < -1 # rubocop:todo Lint/Void
     expect(subject).to_not be_valid
   end
 end
