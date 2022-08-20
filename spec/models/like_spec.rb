@@ -4,7 +4,7 @@ RSpec.describe Like, type: :model do
   before :each do
     author = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                          bio: 'Teacher from Poland.')
-    post = Post.create(author:, title: 'My post', text: 'Hey there') # rubocop:todo Lint/UselessAssignment
+    post = Post.create(author:, title: 'My post', text: 'Hey  how there') # rubocop:todo Lint/UselessAssignment
   end
   it 'is it valid with attributes' do
     Like.create(post:, author:)
