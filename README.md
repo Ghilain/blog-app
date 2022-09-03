@@ -19,6 +19,10 @@ git clone `https://github.com/Ghilain/blog-app.git`
 - navigate to the folder
   cd `blog-app`
 
+## Testing
+This command will run all the tests in your terminal:
+
+> rspec spec
 ## Author
 
 👤 **Ghilain Ishimwe** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
