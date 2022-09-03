@@ -66,8 +66,8 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    addressable (2.8.0)
-      public_suffix (>= 2.0.2, < 5.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     bindex (0.8.1)
     bootsnap (1.13.0)
@@ -91,13 +91,6 @@ GEM
     diff-lcs (1.5.0)
     digest (3.1.0)
     erubi (1.11.0)
-    factory_bot (6.2.1)
-      activesupport (>= 5.0.0)
-    factory_bot_rails (6.2.0)
-      factory_bot (~> 6.2.0)
-      railties (>= 5.0.0)
-    faker (2.22.0)
-      i18n (>= 1.8.11, < 2)
     ffi (1.15.5-x64-mingw-ucrt)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -145,7 +138,7 @@ GEM
     parser (3.1.2.1)
       ast (~> 2.4.1)
     pg (1.4.3-x64-mingw-ucrt)
-    public_suffix (4.0.7)
+    public_suffix (5.0.0)
     puma (5.6.4)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -166,6 +159,10 @@ GEM
       activesupport (= 7.0.3.1)
       bundler (>= 1.15.0)
       railties (= 7.0.3.1)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -264,15 +261,15 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
+  childprocess
   debug
-  factory_bot_rails
-  faker
-  ffi (~> 1.9, >= 1.9.10)
+  ffi
   importmap-rails
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
+  rails-controller-testing
   rspec-rails
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver

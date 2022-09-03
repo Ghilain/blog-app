@@ -3,8 +3,20 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+gem 'rubocop', '>= 1.0', '< 2.0'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
+
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+gem 'childprocess'
+
+gem 'ffi'
+
+gem 'rails-controller-testing'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -69,13 +81,4 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-end
-gem 'rubocop', '>= 1.0', '< 2.0'
-
-gem 'ffi', '~> 1.9', '>= 1.9.10'
-group :development, :test do
-  gem 'debug', platforms: %i[mri mingw x64_mingw] # rubocop:todo Bundler/DuplicatedGem
-  gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'rspec-rails'
 end
