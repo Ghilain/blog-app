@@ -1,43 +1,72 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  author = User.create(name: 'Lilly', bio: 'Teacher from Poland.')
-  author.save
+  before(:all) do
+    @user = User.create(
+      name: 'Doe', photo: 'https://doe.com/me.png',
+      bio: 'Iam John Doe.', posts_counter: 0
+    )
+  end
 
   subject do
-    Post.new(title: 'My post', text: 'Hey there', author:)
+    Post.new(
+      title: 'About', text: 'About me', comments_counter: 1,
+      likes_counter: 0, author_id: @user.id
+    )
   end
 
   before { subject.save }
 
-  it 'title should be present' do
-    subject.title = nil
-    expect(subject).to_not be_valid
+  context 'Return valid data' do
+    it 'should accept title' do
+      subject.title = 'About'
+      expect(subject).to be_valid
+    end
+
+    it 'should accept comments_counter' do
+      subject.comments_counter = 2
+      expect(subject).to be_valid
+    end
+
+    it 'should accept likes_counter' do
+      subject.likes_counter = 6
+      expect(subject).to be_valid
+    end
   end
 
-  it 'title should be invalid if it has more than 250 characters' do
-    subject.title = 'New new, New new, New new, New new, New new,
-    New new, New new, New new, New new, New new, New new,
-    New new, New new'
-    expect(subject).to_not be_valid
-  end
+  context 'Return invalid data' do
+    it 'should not accept blank title' do
+      subject.title = nil
+      expect(subject).to_not be_valid
+    end
 
-  it 'comments_counter should be numeric' do
-    subject.comments_counter < 0 # rubocop:todo Lint/Void
-    expect(subject).to_not be_valid
-  end
+    it 'should not accept more than 250 character' do
+      subject.title = '
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
+      eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
+      montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+      eu, pretium quis,'
+      expect(subject).to_not be_valid
+    end
 
-  it 'likes_counter should be greater than or equal to 0' do
-    subject.likes_counter < 0 # rubocop:todo Lint/Void
-    expect(subject).to_not be_valid
-  end
+    it 'should accept negative comments_counter' do
+      subject.comments_counter = -2
+      expect(subject).to_not be_valid
+    end
 
-  it 'recent_comments should always return a total number of 5 comments' do
-    expect(subject.comments_counter).to eq(subject.comments.last(5))
-  end
+    it 'should accept non numerical comments_counter' do
+      subject.comments_counter = 'C'
+      expect(subject).to_not be_valid
+    end
 
-  it 'update_posts_counter should increment the total posts by 1' do
-    subject.posts_counter
-    expect(subject.author.posts_counter).to eq 1
+    it 'should accept negative likes_counter' do
+      subject.likes_counter = -6
+      expect(subject).to_not be_valid
+    end
+
+    it 'should accept non numerical likes_counter' do
+      subject.likes_counter = 'C'
+      expect(subject).to_not be_valid
+    end
   end
 end

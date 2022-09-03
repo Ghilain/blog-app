@@ -1,16 +1,41 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'Ghilain', photo: 'https://unsplash.com/photos/XPTwNe15dtw', bio: 'web developer') }
-  before { subject.save }
-
-  it 'name must not be blank' do
-    subject.name = nil
-    expect(subject).to_not be_valid
+  subject do
+    User.new(
+      name: 'Doe', photo: 'https://doe.com/me.png',
+      bio: 'Iam John Doe.', posts_counter: 0
+    )
   end
 
-  it 'posts counter should be an integer minimum is zero' do
-    subject.posts_counter < -1 # rubocop:todo Lint/Void
-    expect(subject).to_not be_valid
+  before { subject.save }
+
+  context 'Return valid data' do
+    it 'should accept name' do
+      subject.name = 'Doe'
+      expect(subject).to be_valid
+    end
+
+    it 'should accept posts_counter' do
+      subject.posts_counter = 3
+      expect(subject).to be_valid
+    end
+  end
+
+  context 'Return invalid data' do
+    it 'should not accept blank name' do
+      subject.name = nil
+      expect(subject).to_not be_valid
+    end
+
+    it 'should not accept negative posts_counter' do
+      subject.posts_counter = -1
+      expect(subject).to_not be_valid
+    end
+
+    it 'should not accept non numerical posts_counter' do
+      subject.posts_counter = 'count'
+      expect(subject).to_not be_valid
+    end
   end
 end
