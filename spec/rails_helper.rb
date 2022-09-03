@@ -1,9 +1,5 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-require_relative 'spec_helper'
-require_relative '../app/models/user'
-require_relative '../app/models/post'
-require_relative '../app/models/comment'
-require_relative '../app/models/like'
+require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment/'
 # Prevent database truncation if the environment is production

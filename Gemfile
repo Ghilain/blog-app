@@ -3,20 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
-gem 'rubocop', '>= 1.0', '< 2.0'
-
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
-
-group :development, :test do
-  gem 'rspec-rails'
-end
-
-gem 'childprocess'
-
-gem 'ffi'
-
-gem 'rails-controller-testing'
+gem 'rubocop'
+gem 'rubocop-rails'
+gem 'sqlite3', '~> 1.4'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -62,7 +53,7 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'debug', platforms: %i[mri mingw x64_mingw]
+  # gem 'debug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
@@ -79,6 +70,9 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'ffi', '~> 1.15', '>= 1.15.5'
+  gem 'rspec-activemodel-mocks'
+  gem 'rspec-rails', '~> 4.0.0'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
