@@ -1,2 +1,2 @@
-module CommentsHelper # rubocop:todo Layout/EndOfLine
+module CommentsHelper
 end

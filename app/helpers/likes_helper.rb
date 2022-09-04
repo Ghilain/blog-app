@@ -1,2 +1,2 @@
-module LikesHelper # rubocop:todo Layout/EndOfLine
+module LikesHelper
 end
