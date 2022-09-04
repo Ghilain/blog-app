@@ -1,12 +1,11 @@
-*,
-body {
+*,body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   color: #000;
 }
 
-body {
+body{
   width: 100%;
 }
 
@@ -14,7 +13,7 @@ a {
   text-decoration: none;
 }
 
-section {
+section{
   width: 70%;
   margin: 40px auto;
 }
