@@ -1,5 +1,6 @@
 <section >
   <%= render'shared/user', user: @user %>
+  <%# use each instead of for loop %>
     <% @posts.each do |post| %>
   <a <a href="/users/<%= @user.id %>/posts/<%= post.id %>">
     <div class="list-wrapper">
