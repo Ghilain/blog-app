@@ -2,6 +2,7 @@
   <button type="button" class="create-btn">
     <%= link_to "Create A Post For The First User", new_user_post_path(@users.first.id) , class: "like-btn" %>
   </button>
+  <%# use each instead of for loop %>
   <% @users.each do |user| %>
   <a href='/users/<%= user.id %>'>
     <%= render 'shared/user', user:user %>
