@@ -1,11 +1,14 @@
-<section class="user-index-cont">
-  <button type="button" class="create-btn">
-    <%= link_to "Create A Post For The First User", new_user_post_path(@users.first.id) , class: "like-btn" %>
-  </button>
-  <%# use each instead of for loop %>
-  <% @users.each do |user| %>
-  <a href='/users/<%= user.id %>'>
-    <%= render 'shared/user', user:user %>
-    <a>
-  <% end %>
-</section>
+<ul>
+    <% @users.each do |user| %> 
+        <li class="user_container">
+                <div class="user_img">
+                <img src=<%= user.photo %> alt="profile pic">
+                </div>
+                <div class="user_content">
+                <h2><%= link_to user.name, user_path(user.id) %></h2>
+
+                    <p>Number of posts: <%= user.posts_counter %></p>
+                </div>
+        </li>
+    <% end %>
+</ul>
