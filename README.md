@@ -31,6 +31,12 @@ This command will run all the tests in your terminal:
 - [Twitter](https://twitter.com/GhilainIshimwe)
 - [LinkedIn](https://www.linkedin.com/in/ghilain-ishimwe/)
 
+👤 **Pascal Bizimungu** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
+
+- [GitHub](https://github.com/bizip)
+- [Twitter]
+- [LinkedIn]
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!

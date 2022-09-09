@@ -4,7 +4,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment/'
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
-require_relative 'rspec/rails'
+require 'rspec/rails'
 # Add additional require_relatives below this line. Rails is not loaded until this point!
 
 # require_relatives supporting ruby files with custom matchers and macros, etc, in
