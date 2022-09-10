@@ -10,15 +10,6 @@ body {
   width: 100%;
 }
 
-a {
-  text-decoration: none;
-}
-
-section {
-  width: 70%;
-  margin: 40px auto;
-}
-
 h2 {
   font-size: 28px;
   font-weight: 700;
@@ -34,6 +25,15 @@ p {
   font-size: 15px;
   font-weight: 600;
   line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  width: 70%;
+  margin: 40px auto;
 }
 
 button {
@@ -76,6 +76,10 @@ textarea {
 
 .user-card-cont div h4 {
   text-align: end;
+}
+
+.new_user {
+  margin: 6%;
 }
 
 .bio-wrapper {
@@ -224,6 +228,18 @@ textarea {
   row-gap: 5px;
 }
 
+#post-btn {
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.submit-button {
+  width: 91%;
+  padding: 7px;
+  background-color: white;
+  margin: 10px;
+}
+
 .label {
   font-size: 18px;
   font-weight: 700;
@@ -232,7 +248,7 @@ textarea {
 
 .title-input,
 .text-input {
-  width: calc(100% - 20px);
+  width: calc(70% - 20px);
   padding: 10px;
   border: 2px #000 solid;
 }
@@ -242,7 +258,26 @@ textarea {
   margin-bottom: 20px;
 }
 
-#post-btn {
-  width: 100%;
-  text-transform: uppercase;
+.submit-button:hover {
+  background-color: orange;
+}
+
+.submit-field {
+  width: 90%;
+  padding: 7px;
+  margin: 10px;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-label {
+  margin: 10px;
+}
+
+.title {
+  text-align: center;
 }
