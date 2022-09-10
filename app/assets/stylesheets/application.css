@@ -78,6 +78,10 @@ textarea {
   text-align: end;
 }
 
+.new_user {
+  margin: 6%;
+}
+
 .bio-wrapper {
   border: 2px #000 solid;
   padding: 10px 10px 40px 10px;
@@ -232,7 +236,7 @@ textarea {
 
 .title-input,
 .text-input {
-  width: calc(100% - 20px);
+  width: calc(70% - 20px);
   padding: 10px;
   border: 2px #000 solid;
 }
@@ -252,6 +256,14 @@ textarea {
   padding: 7px;
   background-color: white;
   margin: 10px;
+}
+
+.submit-button:hover {
+  background-color: orange;
+}
+
+.title {
+  text-align: center;
 }
 
 .submit-field {
